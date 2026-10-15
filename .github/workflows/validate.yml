@@ -1,0 +1,30 @@
+name: Validate contest source
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: source
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: source/package-lock.json
+      - run: npm ci
+      - run: npm test
+      - run: npm run test:origin
+      - run: npm run typecheck
+      - run: npm run build
+      - run: node tests/static-build.mjs
+      - run: npm run build:pages
+        env:
+          VITE_API_ORIGIN: https://maimai-collab-gallery.hippocampuss.chatgpt.site

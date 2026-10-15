@@ -1,0 +1,13 @@
+**/node_modules/
+**/dist/
+**/pages-dist/
+**/.wrangler/
+**/.sites-runtime/
+**/.next/
+**/.vinext/
+**/*.tsbuildinfo
+**/.env*
+**/.dev.vars*
+**/*.pem
+**/*debug.log*
+**/tests/evidence/

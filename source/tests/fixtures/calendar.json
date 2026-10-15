@@ -1,0 +1,71 @@
+{
+  "data": {
+    "dailyList": [
+      {
+        "date": "2026-10-13",
+        "events": [
+          {
+            "articleDto": {
+              "title": "麦当劳 X 示例联名",
+              "content": "联名复古棒球帽\n任意餐品消费加39.9元即可得\n10月8日10:45开售",
+              "imgList": []
+            },
+            "price": "0"
+          }
+        ]
+      },
+      {
+        "date": "2026-10-15",
+        "events": [
+          {
+            "articleDto": {
+              "title": "麦当劳 X 示例联名",
+              "content": "联名徽章正式发售\n任意餐品消费加39.9元即可得\n10月15日10:45开售",
+              "imgList": []
+            },
+            "price": "0"
+          }
+        ]
+      },
+      {
+        "date": "2026-10-22",
+        "events": [
+          {
+            "articleDto": {
+              "title": "麦当劳 X 示例联名",
+              "content": "联名丝巾即将开售\n任意餐品消费加39.9元即可得\n10月22日10:45开售\n另有棒球帽&徽章活动",
+              "imgList": []
+            },
+            "price": "0"
+          }
+        ]
+      },
+      {
+        "date": "2026-10-12",
+        "events": [
+          {
+            "articleDto": {
+              "title": "早餐两件套",
+              "content": "早餐两件套",
+              "imgList": []
+            },
+            "price": "0"
+          }
+        ]
+      },
+      {
+        "date": "2026-10-16",
+        "events": [
+          {
+            "articleDto": {
+              "title": "麦当劳 X 示例联名",
+              "content": "联名徽章正式发售\n任意餐品消费加39.9元即可得\n10月15日10:45开售",
+              "imgList": []
+            },
+            "price": "0"
+          }
+        ]
+      }
+    ]
+  }
+}
