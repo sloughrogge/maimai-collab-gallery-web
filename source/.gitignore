@@ -46,9 +46,11 @@ next-env.d.ts
 !/build/sites-vite-plugin.ts
 !/build/sites-worker.ts
 !/build/static-api-worker.ts
+!/build/pages-api-worker.ts
 
 /dist/
 /pages-dist/
+/cf-pages-dist/
 /.wrangler/
 # Checkout-local execution profile and tool state; never publish them.
 /.sites-runtime/

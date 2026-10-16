@@ -4,7 +4,7 @@
 
 面向想了解麦当劳联名周边、出发前核对门店菜单的用户。电脑、平板和手机浏览器均可使用，无需安装 AI 客户端。
 
-[打开网页应用](https://sloughrogge.github.io/maimai-collab-gallery-web/) · [备用站点](https://maimai-collab-gallery.hippocampuss.chatgpt.site/) · [MCP 接入说明](MCP_INTEGRATION.md) · [官方参赛声明](CONTEST_DECLARATION.md)
+[打开网页应用](https://maimai.morpho-ai.com/) · [GitHub Pages 入口](https://sloughrogge.github.io/maimai-collab-gallery-web/) · [MCP 接入说明](MCP_INTEGRATION.md) · [官方参赛声明](CONTEST_DECLARATION.md)
 
 本项目为麦当劳程序员创意开发大赛参赛作品，非麦当劳官方产品。参赛申请及审核状态见 [参赛记录](docs/contest.md)。喜欢这个项目，欢迎在本仓库点 Star。
 
@@ -83,17 +83,19 @@ node tests/static-http.mjs
 
 ## 部署
 
-当前在线版本使用 GitHub Pages 托管前端，现有 Sites 服务托管 API。Pages 自身不执行后端。
+部署到自己的 Cloudflare 账户、让网页和 API 使用同一个域名，请参见 [Cloudflare 部署说明](docs/cloudflare.md)。使用 Pages + Functions 时，构建命令为 `npm run build:cloudflare-pages`，发布命令为 `npm run deploy:cloudflare-pages`（在 `source/` 中执行）。
+
+主站使用 Cloudflare Pages + Functions 托管网页和同域 API。GitHub Pages 保留为备用前端入口，调用同一个 Cloudflare API；GitHub Pages 自身不执行后端。
 
 在 `source/` 中构建独立前端（POSIX shell 示例；Windows PowerShell 使用 `$env:VITE_API_ORIGIN="https://你的后端域名"` 设置环境变量）：
 
 ```bash
-VITE_API_ORIGIN=https://maimai-collab-gallery.hippocampuss.chatgpt.site npm run build:pages
+VITE_API_ORIGIN=https://maimai.morpho-ai.com npm run build:pages
 ```
 
 产物为 `source/pages-dist/`。维护者可运行仓库根目录的 `node scripts/update-static.mjs`，将这些编译文件同步到仓库根目录，再提交到 `main` 发布 Pages。
 
-独立部署时，应部署自己的 Worker API，并把 `VITE_API_ORIGIN` 改成自己的 HTTPS API 来源。API 的 `PUBLIC_WEB_ORIGINS` 需配置为自己的前端完整 HTTPS origin，例如 `https://example.github.io`，不含路径或结尾斜杠，不支持通配域名。预览域名不会自动获得跨域权限。可选定位需要自行绑定 D1 并执行迁移。本仓库不包含现有站点的部署凭据或项目管理标识。
+独立部署时，应部署自己的 Worker API，并把 `VITE_API_ORIGIN` 改成自己的 HTTPS API 来源。API 的 `PUBLIC_WEB_ORIGINS` 需配置为自己的前端完整 HTTPS origin，例如 `https://example.github.io`，不含路径或结尾斜杠，不支持通配域名。预览域名不会自动获得跨域权限。可选定位需要自行绑定 D1 并执行迁移。复制本项目到其他账户时，应替换配置中的数据库 ID；数据库 ID 不是访问凭据。本仓库不包含部署凭据。
 
 ## 代码与文档
 

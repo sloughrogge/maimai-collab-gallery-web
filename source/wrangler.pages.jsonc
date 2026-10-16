@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "maimai-collab-gallery",
+  "pages_build_output_dir": "./cf-pages-dist",
+  "compatibility_date": "2026-05-15",
+  "compatibility_flags": ["nodejs_compat"],
+  "vars": {
+    "PUBLIC_WEB_ORIGINS": "https://sloughrogge.github.io"
+  },
+  "d1_databases": [{
+    "binding": "DB",
+    "database_name": "maimai-collab-gallery",
+    "database_id": "a1e3c842-479a-4a24-8514-68d4a8bdf9fe",
+    "migrations_dir": "drizzle"
+  }]
+}

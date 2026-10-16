@@ -23,8 +23,8 @@ jobs:
       - run: npm test
       - run: npm run test:origin
       - run: npm run typecheck
-      - run: npm run build
+      - run: npm run build:cloudflare-pages
       - run: node tests/static-build.mjs
       - run: npm run build:pages
         env:
-          VITE_API_ORIGIN: https://maimai-collab-gallery.hippocampuss.chatgpt.site
+          VITE_API_ORIGIN: https://maimai.morpho-ai.com

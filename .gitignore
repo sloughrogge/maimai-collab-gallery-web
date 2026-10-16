@@ -1,6 +1,8 @@
 **/node_modules/
 **/dist/
 **/pages-dist/
+**/cf-pages-dist/
+**/.cloudflare-pages/
 **/.wrangler/
 **/.sites-runtime/
 **/.next/

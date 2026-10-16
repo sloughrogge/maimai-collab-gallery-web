@@ -1,7 +1,7 @@
 import {LotteryError} from "./lottery.ts";
 import {validPoint,object,str} from "./gallery.ts";
 import type {Point,RouteResult} from "./gallery.ts";
-export const MAP_USER_AGENT="MaiMaiCollabGallery/1.0 (+https://maimai-collab-gallery.hippocampuss.chatgpt.site)";
+export const MAP_USER_AGENT="MaiMaiCollabGallery/1.0 (+https://github.com/sloughrogge/maimai-collab-gallery-web)";
 export function routeUrl(from:Point,to:Point,mode:"walking"|"cycling"):string {
   if(!validPoint(from)||!validPoint(to))throw new LotteryError("INVALID_POINT","请选择有效的起终点。",400);
   if(mode!=="walking"&&mode!=="cycling")throw new LotteryError("INVALID_MODE","请选择步行或骑行。",400);
